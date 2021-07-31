@@ -11,6 +11,10 @@ body {
 	font-family: "Source Sans Pro",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
+.bigger-links {
+	font-size: 2em;
+}
+
 .site-footer {
 	margin-top: 4em;
 }

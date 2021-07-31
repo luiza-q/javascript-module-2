@@ -84,34 +84,36 @@ function changeGreen () {
 
 const el = document.querySelector('#registerForm');
 
- 
 
 const submitForm = (e) => {
     e.preventDefault();
     
     const emailInput = document.querySelector('#exampleInputEmail1');
-    if (emailInput.value.includes('@')) {
+    const yourName = document.querySelector('#example-text-input');
+    const describeYourself = document.querySelector('#exampleTextarea');
+
+    let emailValid = emailInput.value.trim().includes('@');
+    let nameValid = yourName.value.trim().length > 0;
+    let describeValid = describeYourself.value.length > 0;
+
+
+    if (emailValid && nameValid && describeValid) {
         alert("thank you for filling out the form");
         emailInput.value = '';
-    } else {
-        emailInput.style.backgroundColor = 'red';
-    }
-
-    const yourName = document.querySelector('#example-text-input');
-    if (yourName.value.length > 0) {
-        alert("thank you for filling out the form");
         yourName.value = '';
-    } else {
-        yourName.style.backgroundColor = 'red';
-    }
-
-    const describeYourself = document.querySelector('#exampleTextarea');
-    if (describeYourself.value.length > 0) {
-       alert("thank you for filling out the form");
-       describeYourself.value = '';
-    } else {
-        describeYourself.style.backgroundColor = 'red';
-    }
+        describeYourself.value = '';
+        } 
+        else {
+            if (!emailValid) {
+                emailInput.style.backgroundColor = 'red';
+            }
+            if (!nameValid) {
+                yourName.style.backgroundColor = 'red';
+            }
+            if (!describeValid) {
+                describeYourself.style.backgroundColor = 'red';
+            }
+        }         
 
 
 }

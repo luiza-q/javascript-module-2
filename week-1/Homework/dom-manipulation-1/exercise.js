@@ -18,14 +18,7 @@ Write JavaScript below that logs:
 
 // 1:
 const elem = document.querySelectorAll("p");
-
-function pOfSix(p) {
-    if (p.length === 6) {
-        console.log(p)
-    }
-}
-
-console.log(pOfSix(elem));
+console.log(elem);
 
 // 2:
 const elem2 = document.querySelector("div");
@@ -37,14 +30,7 @@ console.log(elem3);
 
 // 4:
 const elem4 = document.querySelectorAll(".primary-content p");
-
-function lengthOf3 (x) {
-    if (x.length === 3) {
-        console.log(x);
-    }
-}
-
-console.log(lengthOf3(elem4));
+console.log(elem4);
 
 /*
 Task 2
@@ -116,11 +102,25 @@ Task 5
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 
+// const largerLinksButton = document.querySelector('#largerLinksBtn');
+
+// const enlargeLinks = () => {
+//     const as = document.querySelectorAll('a');
+//     as.forEach((a) => {
+//         a.style.fontSize = '2em';
+//     }) 
+// }
+
+// largerLinksButton.addEventListener('click', enlargeLinks);
+
+
 const largerLinksButton = document.querySelector('#largerLinksBtn');
 
 const enlargeLinks = () => {
     const as = document.querySelectorAll('a');
-    as.style.fontSize = '2em';
+    as.forEach((a) => {
+        a.classList.add('bigger-links');
+    }) 
 }
 
 largerLinksButton.addEventListener('click', enlargeLinks);
@@ -146,14 +146,12 @@ addInputTextButton.addEventListener('click', () => {
         generateNewTextDOM(text);
     } 
 
-    
 });
 
 
 
 /*
 Task 7
-======
 
 Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
@@ -168,9 +166,9 @@ const backgroundButton = document.querySelector("#bgrChangeBtn");
 let colorIndex = 0;
 
 const changeColor = () => {
-    const backgr = document.querySelector("body");
-    backgr.style.backgroundColor = bckgrColors[colorIndex % 5];
-    colorIndex++;
+   const backgr = document.querySelector("body");
+   backgr.style.backgroundColor = bckgrColors[colorIndex % 5];
+   colorIndex++;
 }
 
 backgroundButton.addEventListener("click", changeColor);
