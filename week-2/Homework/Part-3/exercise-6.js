@@ -97,7 +97,48 @@ var mentors = [
       }
   },
 
+  // 3. and 4.
+  {
+    addSkill: function(mentors,newSkill){
+      mentors.forEach(mentor.skills.push(newSkill));
+      },
+  },
+
+  // 5.
+  {
+    removeSkill: function(mentors, newSkill){
+      mentors.forEach(mentor => {
+        const newSkills = mentor.skills.filter(skill => skill != newSkill) 
+        mentor.skills = newSkills;
+      })
+    },
+  },
+  
+  // 7. and 8. ???
+  {
+    addStudentLikes: function(){
+      mentors.studentLikes = mentors.studentLikes + 1;
+    }
+  }
+
 ];
 
-//YOUR CODE HERE
+// 1.
+mentors.forEach(mentor => {
+  if (mentor.job.city === 'Barcelona' && mentor.skills.includes('React')){
+    console.log('Hi, my name is ' + mentor.firstName + ' ' + mentor.lastName + '. I work in Barcelona and I know React.');
+  }
+});
 
+// 2.
+mentors.forEach(mentor => {
+  if (mentor.job.city === 'Barcelona') {
+    mentor.class = 'Jun1';
+    mentor.skills.push('SQL');
+  }
+});
+
+
+// 6. ???
+
+mentorWithMoreSkills()
