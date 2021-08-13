@@ -19,3 +19,5 @@ function changeImage (){
     document.// div da img .style. não sei = imagesOptions[index];
     index++;
 }
+
+addEventListener
